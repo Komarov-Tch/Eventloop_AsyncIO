@@ -6,7 +6,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm.session import sessionmaker
 load_dotenv()
 
-PG_DSN = f"postgresql://{os.getenv('POSTGRES_USER')}:{os.getenv('POSTGRES_PASSWORD')}@127.0.0.1:5431/{os.getenv('POSTGRES_DB')}"
+PG_DSN = f"postgresql+asyncpg://{os.getenv('POSTGRES_USER')}:{os.getenv('POSTGRES_PASSWORD')}@127.0.0.1:5431/{os.getenv('POSTGRES_DB')}"
 engine = create_async_engine(PG_DSN)
 Base = declarative_base()
 Session = sessionmaker(
