@@ -16,7 +16,7 @@ Session = sessionmaker(
     )
 
 
-class SWPeople:
+class SWPeople(Base):
 
     __tablename__ = 'people'
 
